@@ -1,0 +1,24 @@
+{% extends "tienda/header.html" %}
+
+{% block title %}Página Principal{% endblock %}
+
+{% block content %}
+    <!-- Contenido específico de la página de inicio -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Menú Principal</h3>
+                <div class="list-group">
+                    <a href="{% url 'lista_categorias' %}" class="list-group-item list-group-item-action">Categorías</a>
+                    <a href="{% url 'lista_clientes' %}" class="list-group-item list-group-item-action">Clientes</a>
+                    <a href="{% url 'lista_productos' %}" class="list-group-item list-group-item-action">Productos</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h1>Bienvenido a Mi Tienda</h1>
+                <p>Selecciona una opción del menú para continuar.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

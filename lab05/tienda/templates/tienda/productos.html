@@ -1,0 +1,35 @@
+{% extends "tienda/header.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Productos</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Categoría</th>
+                <th>Fecha de Publicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.descripcion }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.stock }}</td>
+                <td>{{ producto.categoria.nombre }}</td>
+                <td>{{ producto.pub_date }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No hay productos disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
